@@ -10,13 +10,13 @@ public class FlippingBits {
 		t = in.nextLong();
 		for (int i = 0; i < t; i++) {
 			a = in.nextLong();
-			String res = flippingBits(a);
+			long res = flippingBits(a);
 			System.out.println(res);
 		}
 
 	}
 
-	private static String flippingBits(long a) {
+	private static long flippingBits(long a) {
 		String binStr = Long.toBinaryString(a);
 		binStr = String.format("%32s", binStr).replace(' ', '0');
 		char[] binArray = binStr.toCharArray();
@@ -28,6 +28,6 @@ public class FlippingBits {
 		}
 		binStr = String.valueOf(binArray);
 
-		return Long.valueOf(binStr, 2).toString();
+		return Long.valueOf(binStr, 2);
 	}
 }
